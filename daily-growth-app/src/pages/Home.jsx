@@ -1,4 +1,11 @@
-function Home() {
-    return <h1>Welcome to Daily Growth 🌱</h1>;
-  }
-  export default Home;
+import React from 'react';
+const Home = () => {
+return (
+<div>
+<h2>Home Page</h2>
+<p>Welcome to the Home Page!</p>
+</div>
+);
+};
+export default Home;
+ 
