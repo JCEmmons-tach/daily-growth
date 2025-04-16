@@ -1,10 +1,12 @@
 import React from 'react';
-const Journal = () => {
-return (
-<div>
-<h2>About Page</h2>
-<p>Learn more About us on this page.</p>
-</div>
-);
-};
+
+function Journal() {
+  return (
+    <div>
+      <h1>Daily Journal</h1>
+      <p>Express your thoughts and reflections here.</p>
+    </div>
+  );
+}
+
 export default Journal;

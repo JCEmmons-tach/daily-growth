@@ -1,23 +1,25 @@
-import { Routes, Route } from 'react-router-dom';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom'; // Import Routes and Route
+import Navbar from './components/Navbar.jsx';
 import Home from './pages/Home.jsx';
-import Tracker from './pages/Tracker.jsx';
 import Journal from './pages/Journal.jsx';
+import Tracker from './pages/Tracker.jsx';
+
 function App() {
   return (
-    <Router>
-      <nav>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/journal">About</Link></li>
-          <li><Link to="/tracker">Contact</Link></li>
-        </ul>
-      </nav>
+    <div>
+      <Navbar />
       <Routes>
+        {/* Route for the home page */}
         <Route path="/" element={<Home />} />
+
+        {/* Route for the Daily Journal page */}
         <Route path="/journal" element={<Journal />} />
+
+        {/* Route for the Goal Tracking page */}
         <Route path="/tracker" element={<Tracker />} />
       </Routes>
-    </Router>
+    </div>
   );
 }
 

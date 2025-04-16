@@ -1,10 +1,12 @@
 import React from 'react';
-const Tracker = () => {
-return (
-<div>
-<h2>Contact Page</h2>
-<p>Get in touch with us through the Contact Page.</p>
-</div>
-);
-};
+
+function Tracker() {
+  return (
+    <div>
+      <h1>Goal Tracker</h1>
+      <p>Set your goals and mark them as completed.</p>
+    </div>
+  );
+}
+
 export default Tracker;
