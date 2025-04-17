@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import QuoteCard from '../components/QuoteCard.jsx';
 
 function Home() {
   const [quote, setQuote] = useState('');
@@ -16,10 +17,11 @@ function Home() {
     <div className="page home">
       <h1 className="home__title">Daily Growth Tracker</h1>
       <div className="home__quote">
-        {quote || 'Loading inspirational quote...'}
+        <QuoteCard />
       </div>
       <div className="home__actions">
         <Link className="btn" to="/tracker">Start Tracking</Link>
+        <br></br>
         <Link className="btn" to="/journal">Write in Journal</Link>
       </div>
     </div>
