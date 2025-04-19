@@ -103,3 +103,59 @@ button:focus-visible {
 .btn:hover {
   opacity: 0.9;
 }
+
+
+/*Journal*/
+.page.journal {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.journal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.journal__textarea {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+.notice {
+  background: #e0ffe0;
+  padding: 0.75rem;
+  border: 1px solid #b2ffb2;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+/*Entries*/
+.entries-list {
+  margin-top: 2rem;
+}
+
+.entries-list h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.entry-item {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.entry-date {
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 0.25rem;
+}
+
+.entry-text {
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
