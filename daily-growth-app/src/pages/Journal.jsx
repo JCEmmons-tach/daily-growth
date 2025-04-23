@@ -35,7 +35,7 @@ export default function Journal() {
 
   return (
     <div className="page journal">
-      <h1>Daily Journal</h1>
+      <h1 id="Border">Daily Journal</h1>
 
       {message && <div className="notice">{message}</div>}
 
@@ -56,6 +56,7 @@ export default function Journal() {
       </form>
 
       {entries.length > 0 && (
+
         <div className="entries-list">
           <h2>Past Entries</h2>
           <ul>

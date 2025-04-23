@@ -1,70 +1,63 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* —— Brand Colors —— */
+  --color-primary:   rgba(214, 183, 9, 0.593); 
+  --color-secondary: rgba(214, 183, 9, 0.353); 
+  --color-accent:    rgba(247, 211, 12, 0.353);
+  --color-bg:        #756513; 
+  --color-text:      black; 
+  --color-muted:     rgb(28, 28, 28); 
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* —— Sizing —— */
+  --max-width: 1200px;
+  --padding:   1rem;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* —— Responsive Container —— */
+.container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--padding) 0;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+/* —— Buttons —— */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  background-color: var(--color-primary);
+  color: white;
+  text-decoration: none;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+  text-align: center;
+  transition: opacity 0.2s;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.btn:hover {
+  opacity: 0.9;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/* —— Typography Helpers —— */
+h1, h2 {
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+  text-align: center;
+}
+p {
+  margin-bottom: 1rem;
 }
 
 
@@ -85,6 +78,10 @@ button:focus-visible {
   font-size: 1rem;
   color: #555;
 }
+.quote-card__error {
+  color: red;
+  text-align: center;
+}
 
 .home__actions {
   display: flex;
@@ -104,6 +101,9 @@ button:focus-visible {
   opacity: 0.9;
 }
 
+.Load {
+  text-align: center;
+}
 
 /*Journal*/
 .page.journal {
@@ -158,4 +158,384 @@ button:focus-visible {
 .entry-text {
   white-space: pre-wrap;
   line-height: 1.5;
+}
+
+/*Tracker App*/
+.page.tracker {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.tracker__form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tracker__input {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.tracker__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tracker__item {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem;
+  border-bottom: 1px solid #eee;
+}
+
+.tracker__item--done .tracker__text {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.tracker__text {
+  margin-left: 0.5rem;
+  font-size: 1rem;
+}
+
+.tracker__date {
+  font-size: 0.875rem;
+  color: #555;
+  margin-left: 1.75rem;
+  margin-top: 0.25rem;
+}
+
+.tracker__empty {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
+
+
+
+/*Final Styling!!!!!*/
+
+
+
+/* —— Home Page Styling —— */
+.page.home {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.home__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+/* Quote card already styled globally; override background to match wireframe */
+.page.home .quote-card {
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin: 0 auto 2rem;
+}
+
+/* Actions buttons layout */
+.home__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+/* Desktop: row layout */
+@media (min-width: 600px) {
+  .home__actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/* Primary vs Secondary button coloring */
+.home__actions .btn:first-child {
+  background-color: var(--color-secondary);
+}
+.home__actions .btn:last-child {
+  background-color: var(--color-accent);
+}
+
+/* Shared button tweaks */
+.home__actions .btn {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  transition: transform 0.1s, filter 0.2s;
+}
+.home__actions .btn:hover {
+  filter: brightness(0.9);
+  transform: translateY(-1px);
+}
+.home__actions .btn:active {
+  transform: translateY(1px);
+}
+
+/* Larger screens: increase sizing */
+@media (min-width: 1024px) {
+  .home__title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+  .home__actions .btn {
+    font-size: 1.125rem;
+    padding: 1rem 2.5rem;
+  }
+}
+
+
+
+
+/* —— Journal Page Styling —— */
+.page.journal {
+  padding: 2rem 1rem;
+  text-align: center;
+ 
+}
+
+/* Form card */
+.page.journal .journal__form {
+  background: white;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Textarea styling */
+.page.journal .journal__textarea {
+  width: 100%;
+  min-height: 180px;
+  padding: 1rem;
+  border: 1px solid var(--color-muted);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+/* Save button */
+.page.journal .journal__form .btn {
+  align-self: flex-end;
+  background-color: var(--color-secondary);
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  transition: filter 0.2s, transform 0.1s;
+}
+.page.journal .journal__form .btn:hover {
+  filter: brightness(0.9);
+  transform: translateY(-1px);
+}
+.page.journal .journal__form .btn:active {
+  transform: translateY(1px);
+}
+
+/* Notice banner */
+.page.journal .notice {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  padding: 1rem;
+  background-color: var(--color-accent);
+  color: white;
+  border-radius: 2rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Reset button */
+.page.journal .btn--danger {
+  background-color: #d9534f;
+  margin-bottom: 1.5rem;
+}
+
+/* Entries list */
+.entries-list {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.entries-list h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+/* Entry cards */
+.entry-item {
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  margin-bottom: 1rem;
+}
+
+.entry-date {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  margin-bottom: 0.5rem;
+}
+
+.entry-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+/* Responsive tweaks */
+@media (min-width: 768px) {
+  .page.journal .journal__form {
+    padding: 2rem;
+  }
+  .page.journal .journal__textarea {
+    min-height: 240px;
+  }
+  .entries-list h2 {
+    font-size: 1.75rem;
+  }
+}
+
+
+
+
+/* —— Goal Tracker Page Styling —— */
+.page.tracker {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+/* Input card */
+.page.tracker .tracker__form {
+  background: white;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+/* Text input */
+.page.tracker .tracker__input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--color-muted);
+  border-radius: 0.5rem;
+}
+
+/* Add button */
+.page.tracker .tracker__form .btn {
+  background-color: var(--color-secondary);
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  transition: filter 0.2s, transform 0.1s;
+}
+.page.tracker .tracker__form .btn:hover {
+  filter: brightness(0.9);
+  transform: translateY(-1px);
+}
+.page.tracker .tracker__form .btn:active {
+  transform: translateY(1px);
+}
+
+/* Empty state */
+.page.tracker .tracker__empty {
+  font-style: italic;
+  color: var(--color-muted);
+}
+
+/* Goals list container */
+.tracker__list {
+  max-width: 600px;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+/* Individual goal cards */
+.tracker__item {
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Completed state styling */
+.tracker__item--done {
+  background: var(--color-bg);
+}
+.tracker__item--done .tracker__text {
+  text-decoration: line-through;
+  color: var(--color-muted);
+}
+
+/* Text and checkbox alignment */
+.tracker__item label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+}
+
+/* Completion date */
+.tracker__date {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  margin-left: 1.75rem;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .page.tracker .tracker__form {
+    padding: 2rem;
+  }
+  .tracker__item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .tracker__date {
+    margin: 0;
+    font-size: 0.875rem;
+  }
+}
+
+
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: white;          /* ensure legibility over content */
+  z-index: 1000;
+  padding: var(--padding);
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }

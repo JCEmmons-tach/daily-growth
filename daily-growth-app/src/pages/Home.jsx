@@ -1,31 +1,23 @@
-import React, { useEffect, useState } from 'react';
+
+// src/pages/Home.jsx
+import React from 'react';
 import { Link } from 'react-router-dom';
 import QuoteCard from '../components/QuoteCard.jsx';
 
-function Home() {
-  const [quote, setQuote] = useState('');
-
-  useEffect(() => {
-    // TODO: replace with your chosen API endpoint
-    fetch('https://zenquotes.io/api/today')
-      .then(res => res.json())
-      .then(([data]) => setQuote(data.q + ' — ' + data.a))
-      .catch(console.error);
-  }, []);
-
+export default function Home() {
   return (
-    <div className="page home">
+    <div className="container page home">
       <h1 className="home__title">Daily Growth Tracker</h1>
-      <div className="home__quote">
-        <QuoteCard />
-      </div>
+
+      {/* Rotating quote component */}
+      <QuoteCard />
+
+      {/* Page actions */}
       <div className="home__actions">
-        <Link className="btn" to="/tracker">Start Tracking</Link>
-        <br></br>
-        <Link className="btn" to="/journal">Write in Journal</Link>
+        <Link to="/tracker" className="btn">Start Tracking</Link>
+        <Link to="/journal" className="btn">Write in Journal</Link>
       </div>
     </div>
   );
 }
 
-export default Home;
